@@ -4,7 +4,7 @@ from urllib.parse import urljoin, urlparse ,unquote
 import os
 import time
 
-base_url = "https://stritstax.com"
+# base_url = "https://stritstax.com"
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
 }
@@ -64,6 +64,9 @@ def scrape_page(url):
             scrape_page(link)
         time.sleep(1)
 
+
+base_url = input("Enter the base URL: ")
+print("Starting to scrape pages...")
 scrape_page(base_url)
 print("Scraping completed.")
 
